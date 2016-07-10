@@ -144,7 +144,20 @@
         });
       }
     }
+
+    var units = ['hours', 'minutes', 'seconds'];
     
+    if (!hasMatch && string.trim() != '' && string.includes(':')) {
+      items = string.split(':');
+      if (items.length > 3) {
+        throw "juration.parse(): Can only parse HOURS:MINUTES:SECONDS or HOURS:MINUTES";
+      }
+      new_string = "";
+      for (var i=0; i < items.length; i++) {
+        new_string += items[i] + ' ' + units[i] + ' ';
+      }
+      return parse(new_string, opts);
+    }
 
     if (!hasMatch && !isNaN(string) && string.trim() != '') return parse(string + opts.defaultUnit, opts);
     

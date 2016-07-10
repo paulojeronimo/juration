@@ -65,7 +65,7 @@ $(function(){
       ["165hras", "juration.parse(): Unable to parse: hras"],
       ["15 dayz", "juration.parse(): Unable to parse: dayz"],
       ["", "juration.parse(): Unable to parse: a falsey value"],
-      ["15ms", "juration.parse(): Unable to parse: ms"]
+      ["15ms", "juration.parse(): Unable to parse: ms"],
     ];
     
     for(var i = 0, len = testCases.length; i < len; i++) {
@@ -83,6 +83,16 @@ $(function(){
     var parsed = juration.parse('90', {defaultUnit: 'minutes'});
     equal(parsed, 90 * MINUTE, "We expect '90' to be 5400");
     });
+
+  test("parsing chrono times", function() {
+    var parsed = juration.parse('5:20');
+    equal(parsed, 5 * HOUR + 20 * MINUTE, "We expect '5:20' to be 5 hours, 20 minutes")
+
+    var parsed = juration.parse('5:20:53');
+    equal(parsed, 5 * HOUR + 20 * MINUTE + 53, "We expect '5:20:53' to be 5 hours, 20 minutes, 53 seconds")
+
+    raises(function(){juration.parse('5:25:53:53');}, "juration.parse(): Can only parse HOURS:MINUTES:SECONDS or HOURS:MINUTES");
+  });
 
   test("stringifying seconds to chrono natural language strings", function() {
     var testCases = [
