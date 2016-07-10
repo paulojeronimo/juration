@@ -33,10 +33,15 @@ Parse-able strings:
 * 47 yrs 6 mos and 4d
 * 3 weeks and 2 days
 
-Todo
+Forked Differences
 ----
-* Add customisable default unit option, e.g. `juration.parse("10", { defaultUnit: 'minutes' }) // returns 600`
-* Parse chrono format i.e. hh:mm:ss
+* Added customizable default unit option, e.g. `juration.parse("10", { defaultUnit: 'minutes' }) // returns 600`
+* Parse now supports chrono format i.e. hh:mm:ss
+
+Contributors
+-----------
+@igitur - customizable default unit option
+@pato - chrono time format support for parser
 
 Licence
 -------
