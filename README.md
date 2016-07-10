@@ -41,6 +41,7 @@ Forked Differences
 Contributors
 -----------
 @igitur - customizable default unit option
+
 @pato - chrono time format support for parser
 
 Licence
