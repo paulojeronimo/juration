@@ -1,0 +1,27 @@
+{
+  "name": "juration",
+  "version": "0.1.0",
+  "description": "",
+  "main": "juration.js",
+  "scripts": {
+    "test": "open ./test/index.html"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulojeronimo/juration.git"
+  },
+  "keywords": [
+    "date",
+    "time",
+    "parse",
+    "string"
+  ],
+  "author": "Paulo Jeronimo <paulojeronimo@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paulojeronimo/juration/issues"
+  },
+  "homepage": "https://github.com/paulojeronimo/juration"
+}
